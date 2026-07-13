@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/LMS-portal/static/css/main.6a3895e1.css",
+    "main.js": "/LMS-portal/static/js/main.f1f34b2d.js",
+    "index.html": "/LMS-portal/index.html",
+    "main.6a3895e1.css.map": "/LMS-portal/static/css/main.6a3895e1.css.map",
+    "main.f1f34b2d.js.map": "/LMS-portal/static/js/main.f1f34b2d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6a3895e1.css",
+    "static/js/main.f1f34b2d.js"
+  ]
+}
