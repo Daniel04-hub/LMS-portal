@@ -130,7 +130,6 @@ export default function ModuleCreation() {
       {message && <AlertMessage message={message} type={type} />}
 
       <div className="row g-4">
-        {/* Module Form */}
         <div className="col-12 col-lg-5">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="glass-card sticky-top" style={{ top: '100px' }}>
             <h5 className="fw-bold mb-4 d-flex align-items-center gap-2">
@@ -194,7 +193,6 @@ export default function ModuleCreation() {
           </motion.div>
         </div>
 
-        {/* Modules List */}
         <div className="col-12 col-lg-7">
           <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} className="glass-card h-100">
             <h5 className="fw-bold mb-4 d-flex align-items-center gap-2">

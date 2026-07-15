@@ -49,7 +49,6 @@ function normalizeProject(project) {
   };
 }
 
-// Simple helpers to check file types
 function isImageFile(fileType) {
   var t = String(fileType || "").toLowerCase();
   return t.indexOf("image/") === 0;
@@ -67,7 +66,6 @@ function isPdfFile(fileType, fileName) {
   return false;
 }
 
-// Preview uploaded file: image, pdf or link
 function FilePreview(props) {
   var item = props.item || {};
 
@@ -103,7 +101,6 @@ function FilePreview(props) {
   );
 }
 
-// Actions UI for reviewing a submission
 function ReviewActions(props) {
   var item = props.item;
   var draftComment = props.draftComment;
@@ -152,7 +149,6 @@ export default function SubmissionReview() {
   var [commentDrafts, setCommentDrafts] = useState({});
   var [isLoaded, setIsLoaded] = useState(false);
 
-  // Load saved data from localStorage on mount
   useEffect(function () {
     var savedStudents = JSON.parse(localStorage.getItem("lms-students")) || [];
     var savedAssignments = JSON.parse(localStorage.getItem("lms-assignments")) || [];
@@ -179,7 +175,6 @@ export default function SubmissionReview() {
     setIsLoaded(true);
   }, []);
 
-  // Save assignments when they change after initial load
   useEffect(function () {
     if (!isLoaded) {
       return;
@@ -188,7 +183,6 @@ export default function SubmissionReview() {
     localStorage.setItem("lms-assignments", JSON.stringify(assignments));
   }, [assignments, isLoaded]);
 
-  // Save projects when they change after initial load
   useEffect(function () {
     if (!isLoaded) {
       return;
@@ -197,7 +191,6 @@ export default function SubmissionReview() {
     localStorage.setItem("lms-projects", JSON.stringify(projects));
   }, [projects, isLoaded]);
 
-  // Build list of student emails assigned to this trainer
   var trainerName = "";
   if (user && user.name) {
     trainerName = user.name;
@@ -211,7 +204,6 @@ export default function SubmissionReview() {
     }
   }
 
-  // Check whether a submission (assignment/project) should be visible to this trainer
   function isVisibleSubmission(item) {
     if (item && item.trainerName && item.trainerName === trainerName) {
       return true;
@@ -226,7 +218,6 @@ export default function SubmissionReview() {
     return false;
   }
 
-  // Prepare visible assignments and projects, normalized and sorted
   var visibleAssignments = [];
   for (var ai = 0; ai < assignments.length; ai++) {
     var a = assignments[ai];
@@ -251,7 +242,6 @@ export default function SubmissionReview() {
     return Number(second.id) - Number(first.id);
   });
 
-  // Update draft comment for a submission
   function updateDraftComment(submissionId, value) {
     setCommentDrafts(function (prev) {
       var next = {};
@@ -265,7 +255,6 @@ export default function SubmissionReview() {
     });
   }
 
-  // Get the comment to use when saving a review: draft overrides stored comment
   function getReviewComment(item) {
     if (commentDrafts && commentDrafts[item.id] !== undefined) {
       return commentDrafts[item.id];
@@ -278,7 +267,6 @@ export default function SubmissionReview() {
     return "";
   }
 
-  // Update status and comment for an assignment
   function updateAssignmentReview(assignmentId, status) {
     var next = [];
     for (var i = 0; i < assignments.length; i++) {
@@ -306,7 +294,6 @@ export default function SubmissionReview() {
     setAssignments(next);
   }
 
-  // Update status and comment for a project
   function updateProjectReview(projectId, status) {
     var next = [];
     for (var i = 0; i < projects.length; i++) {
@@ -340,7 +327,6 @@ export default function SubmissionReview() {
     noSubmissions = true;
   }
 
-  // Render helper: status cell
   function renderStatusCellForAssignment(assignment) {
     return (
       <span className={getStatusBadgeClass(assignment.status)}>
@@ -357,7 +343,6 @@ export default function SubmissionReview() {
     );
   }
 
-  // Render helper: comment cell
   function renderCommentCellForAssignment(assignment) {
     if (assignment.reviewComment) {
       return assignment.reviewComment;
@@ -372,7 +357,6 @@ export default function SubmissionReview() {
     return <span className="text-muted">No comments yet</span>;
   }
 
-  // Render helper: github link cell
   function renderGithubCell(project) {
     if (project && project.githubLink) {
       return (
@@ -384,7 +368,6 @@ export default function SubmissionReview() {
     return <span className="text-muted">No link</span>;
   }
 
-  // No submissions element
   var noSubmissionsElement = null;
   if (noSubmissions) {
     noSubmissionsElement = (
@@ -394,7 +377,6 @@ export default function SubmissionReview() {
     );
   }
 
-  // Assignment panel element
   var assignmentPanel = null;
   if (visibleAssignments.length === 0) {
     assignmentPanel = <p className="text-muted mb-0">No submissions available</p>;
@@ -441,7 +423,6 @@ export default function SubmissionReview() {
     );
   }
 
-  // Project panel element
   var projectPanel = null;
   if (visibleProjects.length === 0) {
     projectPanel = <p className="text-muted mb-0">No submissions available</p>;

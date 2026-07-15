@@ -397,7 +397,6 @@ export default function MyCourses() {
   courseProgress = progressData.courseProgress;
   courseStatus = progressData.courseStatus;
 
-  // unlock modules
   modules.forEach(function (module, index) {
     if (index === 0) {
       unlockedModuleIds.push(module.id);

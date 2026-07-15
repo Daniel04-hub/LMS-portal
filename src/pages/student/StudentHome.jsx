@@ -32,7 +32,6 @@ export default function StudentHome() {
 
   return (
     <div className="container-fluid py-4 px-lg-4 dashboard-main">
-      {/* Hero Section */}
       <motion.div variants={containerVariants} initial="hidden" animate="visible" className="mb-5 d-flex flex-column flex-lg-row justify-content-between align-items-lg-end gap-4">
         <div>
           <h1 className="h2 fw-bold mb-2 text-gradient">Student Portal</h1>
@@ -41,7 +40,6 @@ export default function StudentHome() {
           </p>
         </div>
         
-        {/* Streak & Motivation */}
         <div className="d-flex gap-3">
           <div className="glass-panel p-2 px-3 rounded-pill d-flex align-items-center gap-2">
             <Flame color="var(--accent-color)" size={20} />
@@ -54,7 +52,6 @@ export default function StudentHome() {
         </div>
       </motion.div>
 
-      {/* KPI Cards */}
       <motion.div variants={containerVariants} initial="hidden" animate="visible" className="row g-4 mb-5">
         <motion.div variants={itemVariants} className="col-12 col-sm-6 col-xl-3">
           <StatsCard title="Enrolled Courses" count={courses.length || 1} icon={BookOpen} />
@@ -71,7 +68,6 @@ export default function StudentHome() {
       </motion.div>
 
       <div className="row g-4 mb-5">
-        {/* Continue Learning */}
         <div className="col-12 col-lg-8">
           <div className="d-flex justify-content-between align-items-center mb-4">
             <h5 className="fw-bold mb-0">Continue Learning</h5>
@@ -95,7 +91,6 @@ export default function StudentHome() {
           </div>
         </div>
 
-        {/* Achievements & Leaderboard */}
         <div className="col-12 col-lg-4">
           <h5 className="fw-bold mb-4">Your Achievements</h5>
           <div className="glass-card h-100">
@@ -127,7 +122,6 @@ export default function StudentHome() {
         </div>
       </div>
 
-      {/* AI & Future Modules */}
       <div>
         <h5 className="fw-bold mb-4 ms-2">Future of Learning</h5>
         <div className="row g-3">

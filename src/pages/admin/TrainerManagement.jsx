@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import CustomButton from "../../components/CustomButton";
 import DataTable from "../../components/DataTable";
 
-// Convert trainer data into standard format
 function normalizeTrainer(trainer, index) {
   if (index === undefined) {
     index = 0;
@@ -62,7 +61,6 @@ function normalizeTrainer(trainer, index) {
   };
 }
 
-// Get trainer name
 function getTrainerDisplayName(trainer) {
   if (trainer && trainer.name) {
     return String(trainer.name).trim();
@@ -80,7 +78,6 @@ export default function TrainerManagement() {
   const [message, setMessage] = useState("");
   const [type, setType] = useState("info");
 
-  // Show a small message banner for the form
   function showMessage(text, messageType) {
     setMessage(text);
     setType(messageType);
@@ -110,7 +107,6 @@ export default function TrainerManagement() {
   const [selectedTrainerId, setSelectedTrainerId] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
 
-  // Keep simple arrays in plain variables for read operations
   let trainerRecords = [];
 
   if (Array.isArray(trainers)) {
@@ -140,7 +136,6 @@ export default function TrainerManagement() {
   });
 
   useEffect(function () {
-    // Load the saved data from localStorage when the page loads
     const savedTrainers =
       JSON.parse(localStorage.getItem("lms-trainers")) || [];
 
@@ -181,7 +176,6 @@ export default function TrainerManagement() {
   }, []);
 
   useEffect(function () {
-    // Save trainer list when it changes after initial load
     if (!isLoaded) {
       return;
     }

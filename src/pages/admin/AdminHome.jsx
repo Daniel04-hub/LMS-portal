@@ -27,7 +27,6 @@ function AdminHome() {
     return () => window.removeEventListener("focus", loadDashboardData);
   }, []);
 
-  // Mock Chart Data
   const revenueData = {
     labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
     datasets: [{
@@ -70,13 +69,11 @@ function AdminHome() {
 
   return (
     <div className="container-fluid py-4 px-lg-4 dashboard-main">
-      {/* Hero Section */}
       <motion.div variants={containerVariants} initial="hidden" animate="visible" className="mb-5">
         <h1 className="h2 fw-bold mb-2 text-gradient">Executive Dashboard</h1>
         <p style={{ color: 'var(--text-secondary)' }}>Welcome back, <span className="fw-semibold text-white">{user.name}</span>. Here's what's happening today.</p>
       </motion.div>
 
-      {/* KPI Cards */}
       <motion.div variants={containerVariants} initial="hidden" animate="visible" className="row g-4 mb-5">
         <motion.div variants={itemVariants} className="col-12 col-sm-6 col-xl-3">
           <StatsCard title="Total Students" count={students.length || 12450} icon={GraduationCap} trend="+12.5%" />
@@ -92,7 +89,6 @@ function AdminHome() {
         </motion.div>
       </motion.div>
 
-      {/* Analytics Area */}
       <motion.div variants={containerVariants} initial="hidden" animate="visible" className="row g-4 mb-5">
         <motion.div variants={itemVariants} className="col-12 col-lg-8">
           <div className="glass-card h-100">
@@ -118,7 +114,6 @@ function AdminHome() {
       </motion.div>
 
       <div className="row g-4 mb-5">
-        {/* Quick Actions & Recent Activity */}
         <div className="col-12 col-lg-6">
           <div className="glass-card h-100">
             <h5 className="fw-bold mb-4">Recent Activity</h5>
@@ -143,7 +138,6 @@ function AdminHome() {
           </div>
         </div>
 
-        {/* AI & Future Modules */}
         <div className="col-12 col-lg-6">
           <h5 className="fw-bold mb-4 ms-2">Platform Enhancements</h5>
           <div className="row g-3">

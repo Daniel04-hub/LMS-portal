@@ -244,7 +244,6 @@ export default function CodingTest() {
       {warningMessage && <AlertMessage message={warningMessage} type="danger" />}
 
       <div className="row g-4">
-        {/* Test Area */}
         <div className="col-12 col-lg-5">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="glass-card">
             <h5 className="fw-bold mb-4 d-flex align-items-center gap-2"><Code size={20} color="var(--accent-color)" /> Assessment Portal</h5>
@@ -333,7 +332,6 @@ export default function CodingTest() {
           </motion.div>
         </div>
 
-        {/* Submissions List */}
         <div className="col-12 col-lg-7">
           <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} className="glass-card h-100">
             <h5 className="fw-bold mb-4 d-flex align-items-center gap-2"><Clock size={20} color="var(--accent-color)" /> Submission History</h5>

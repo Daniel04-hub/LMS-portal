@@ -146,7 +146,6 @@ export default function StudentCreation() {
     setVisiblePasswords(prev => ({ ...prev, [studentId]: !prev[studentId] }));
   };
 
-  // Stats calculation
   const totalStudents = visibleStudents.length;
   const activeStudents = visibleStudents.filter(s => s.courseStatus !== "Completed").length;
   const totalBatches = new Set(visibleStudents.map(s => s.batch)).size;
@@ -162,7 +161,6 @@ export default function StudentCreation() {
         </div>
       </div>
 
-      {/* Stats Hero */}
       <div className="row g-3 mb-5">
         {[
           { label: "Total Students", value: totalStudents, icon: Users, color: "var(--accent-color)" },
@@ -187,7 +185,6 @@ export default function StudentCreation() {
       {message && <AlertMessage message={message} type={type} />}
 
       <div className="row g-4">
-        {/* Creation Form */}
         <div className="col-12 col-lg-5">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="glass-card sticky-top" style={{ top: '100px' }}>
             <div className="d-flex gap-3 border-bottom pb-3 mb-4" style={{ borderColor: 'var(--glass-border) !important' }}>
@@ -295,7 +292,6 @@ export default function StudentCreation() {
               </form>
             )}
 
-            {/* Latest Credentials Card */}
             {latestCredentials && activeTab === "single" && (
               <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} className="p-4 rounded-4 mt-4" style={{ background: 'rgba(76, 175, 80, 0.1)', border: '1px solid rgba(76, 175, 80, 0.3)' }}>
                 <h6 className="fw-bold text-success mb-3 d-flex align-items-center gap-2"><CheckCircle size={18}/> Student Created!</h6>
@@ -315,7 +311,6 @@ export default function StudentCreation() {
           </motion.div>
         </div>
 
-        {/* List & Bulk Preview */}
         <div className="col-12 col-lg-7">
           <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} className="glass-card h-100">
             {activeTab === "bulk" && bulkPreview.length > 0 ? (

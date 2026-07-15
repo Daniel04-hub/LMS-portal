@@ -22,7 +22,6 @@ export default function AnalyticsDashboard() {
   const totalStudents = students.length || 12450;
   const totalCourses = courses.length || 890;
   
-  // Mock Data for Visuals
   const courseCompletionData = {
     labels: ['Completed', 'In Progress', 'Not Started'],
     datasets: [{
@@ -68,7 +67,6 @@ export default function AnalyticsDashboard() {
         </button>
       </div>
 
-      {/* KPI Cards */}
       <div className="row g-4 mb-5">
         <div className="col-12 col-sm-6 col-xl-3"><StatsCard title="Total Students" count={totalStudents} icon={Users} trend="+8.4%" /></div>
         <div className="col-12 col-sm-6 col-xl-3"><StatsCard title="Active Courses" count={totalCourses} icon={BookOpen} trend="+12.1%" /></div>
@@ -77,7 +75,6 @@ export default function AnalyticsDashboard() {
       </div>
 
       <div className="row g-4 mb-5">
-        {/* Progress Rings */}
         <div className="col-12 col-lg-4">
           <div className="glass-card h-100 d-flex flex-column">
             <h5 className="fw-bold mb-4">Course Status</h5>
@@ -91,7 +88,6 @@ export default function AnalyticsDashboard() {
           </div>
         </div>
 
-        {/* Bar Chart */}
         <div className="col-12 col-lg-8">
           <div className="glass-card h-100">
             <h5 className="fw-bold mb-4">Weekly Performance Trends</h5>
@@ -102,7 +98,6 @@ export default function AnalyticsDashboard() {
         </div>
       </div>
 
-      {/* Deep Dive Metrics */}
       <div className="row g-4">
         <div className="col-12 col-lg-6">
           <div className="glass-card h-100">

@@ -67,7 +67,6 @@ export default function RegisterPage() {
 
   return (
     <div className="min-vh-100 d-flex overflow-hidden" style={{ background: 'var(--bg-primary)' }}>
-      {/* Left Panel - Hero Background */}
       <motion.div 
         initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}
         className="d-none d-lg-flex col-lg-6 position-relative flex-column justify-content-center p-5 text-white"
@@ -86,10 +85,8 @@ export default function RegisterPage() {
         </div>
       </motion.div>
 
-      {/* Right Panel - Register Form */}
       <div className="col-12 col-lg-6 d-flex flex-column justify-content-center align-items-center position-relative p-4 p-md-5">
         
-        {/* Theme Switcher */}
         <div className="position-absolute top-0 end-0 p-4">
           <div className="position-relative">
             <button className="btn btn-link p-2 glass-panel rounded-circle d-flex" onClick={() => setShowThemeMenu(!showThemeMenu)}>

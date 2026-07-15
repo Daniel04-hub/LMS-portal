@@ -394,7 +394,6 @@ export default function StudentProgress() {
     if (!exists) {
       setSelectedBatch("All Batches");
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [batchOptions.join("|"), selectedBatch]);
 
   const courseFilter = String(selectedCourse || "All Courses").trim().toLowerCase();

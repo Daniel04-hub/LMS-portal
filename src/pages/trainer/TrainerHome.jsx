@@ -32,13 +32,11 @@ export default function TrainerHome() {
 
   return (
     <div className="container-fluid py-4 px-lg-4 dashboard-main">
-      {/* Hero Section */}
       <motion.div variants={containerVariants} initial="hidden" animate="visible" className="mb-5">
         <h1 className="h2 fw-bold mb-2 text-gradient">Instructor Portal</h1>
         <p style={{ color: 'var(--text-secondary)' }}>Welcome back, <span className="fw-semibold text-white">{user.name}</span>. Ready to inspire?</p>
       </motion.div>
 
-      {/* KPI Cards */}
       <motion.div variants={containerVariants} initial="hidden" animate="visible" className="row g-4 mb-5">
         <motion.div variants={itemVariants} className="col-12 col-sm-6 col-xl-3">
           <StatsCard title="Total Courses" count={assignedCourses} icon={BookOpen} trend="+2 New" />
@@ -55,7 +53,6 @@ export default function TrainerHome() {
       </motion.div>
 
       <div className="row g-4 mb-5">
-        {/* Teaching Progress & Tasks */}
         <div className="col-12 col-lg-8">
           <div className="glass-card h-100">
             <div className="d-flex justify-content-between align-items-center mb-4">
@@ -93,7 +90,6 @@ export default function TrainerHome() {
           </div>
         </div>
 
-        {/* Achievement Badges & Recent Activity */}
         <div className="col-12 col-lg-4">
           <div className="glass-card h-100">
             <h5 className="fw-bold mb-4">Recent Interactions</h5>
@@ -118,7 +114,6 @@ export default function TrainerHome() {
         </div>
       </div>
 
-      {/* AI & Future Modules */}
       <div>
         <h5 className="fw-bold mb-4 ms-2">AI Teaching Tools</h5>
         <div className="row g-3">

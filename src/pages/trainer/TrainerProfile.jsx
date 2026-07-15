@@ -89,7 +89,6 @@ export default function TrainerProfile() {
       {message && <AlertMessage message={message} type={type} />}
 
       <div className="row g-4">
-        {/* Left Column: Avatar & Quick Stats */}
         <div className="col-12 col-lg-4">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="glass-card text-center mb-4">
             <div className="position-relative d-inline-block mb-3">
@@ -123,7 +122,6 @@ export default function TrainerProfile() {
           </motion.div>
         </div>
 
-        {/* Right Column: Edit Profile */}
         <div className="col-12 col-lg-8">
           <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} className="glass-card mb-4">
             <h5 className="fw-bold mb-4 d-flex align-items-center gap-2"><User size={18} /> Account Details</h5>

@@ -136,7 +136,6 @@ export default function StudentReport() {
     if (!exists) {
       setSelectedBatch("All Batches");
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [batchOptions.join("|"), selectedBatch]);
 
   const normalizedStudents = Array.isArray(syncedStudents)

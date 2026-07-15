@@ -73,7 +73,6 @@ export default function StudentProfile() {
       {message && <AlertMessage message={message} type={type} />}
 
       <div className="row g-4">
-        {/* Left Column: Avatar & Quick Stats */}
         <div className="col-12 col-lg-4">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="glass-card text-center mb-4">
             <div className="position-relative d-inline-block mb-3">
@@ -122,7 +121,6 @@ export default function StudentProfile() {
           </motion.div>
         </div>
 
-        {/* Right Column: Edit Profile & Timeline */}
         <div className="col-12 col-lg-8">
           <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} className="glass-card mb-4">
             <h5 className="fw-bold mb-4 d-flex align-items-center gap-2"><Edit2 size={18} /> Edit Profile</h5>
